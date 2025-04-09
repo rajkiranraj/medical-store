@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Store</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      transition: all 0.3s ease;
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.5);
+    }
+    
+    .btn-gradient {
+      background: linear-gradient(45deg, #4ade80, #22c55e);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-gradient:hover {
+      background: linear-gradient(45deg, #22c55e, #16a34a);
+      transform: scale(1.05);
+    }
+    
+    body {
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      min-height: 100vh;
+    }
+    
+    .cart-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      animation: pulse 1s;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    
+    .cart-popup {
+      transition: all 0.5s ease;
+      transform-origin: top right;
+    }
+    
+    .cart-popup.hidden {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="glass sticky top-0 z-50 px-4 py-3 mb-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+        <h1 class="text-2xl font-bold text-green-800">AyurMed Store</h1>
+      </div>
+      
+      <div class="flex space-x-6">
+        <a href="#" class="text-green-700 hover:text-green-900 transition-colors">Home</a>
+        <a href="#" class="text-green-700 hover:text-green-900 transition-colors">Products</a>
+        <a href="#" class="text-green-700 hover:text-green-900 transition-colors">About</a>
+        <a href="#" class="text-green-700 hover:text-green-900 transition-colors">Contact</a>
+      </div>
+      
+      <div class="relative">
+        <button id="cart-button" class="flex items-center text-green-800 hover:text-green-900">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span id="cart-badge" class="cart-badge bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs font-bold">0</span>
+        </button>
+        
+        <div id="cart-popup" class="cart-popup glass hidden absolute right-0 mt-3 w-72 rounded-lg shadow-xl p-4">
+          <h3 class="font-bold text-gray-800 mb-2">Your Cart</h3>
+          <div id="cart-items" class="max-h-64 overflow-y-auto">
+            <!-- Cart items will be displayed here -->
+            <div class="text-gray-600 text-center py-4">Your cart is empty</div>
+          </div>
+          <div class="border-t mt-4 pt-4">
+            <div class="flex justify-between font-bold">
+              <span>Total:</span>
+              <span id="cart-total">₹0.00</span>
+            </div>
+            <button class="btn-gradient w-full text-white rounded-lg py-2 mt-3 font-medium">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="container mx-auto px-4 pb-12">
+    <h2 class="text-3xl font-bold text-green-800 mb-8 text-center">Featured Products</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Product 1 -->
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Everherb Diabetic Care Juice" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Everherb Diabetic Care Juice-13</h3>
+          <p class="text-gray-600">1l Juice in Bottle</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹599</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(60%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹239.6</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="1" data-name="Everherb Diabetic Care Juice" data-price="239.6">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <!-- Product 2 -->
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Pharmeasy Calcium Magnesium Vitamin D3" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Pharmeasy Calcium Magnesium Vitamin D3</h3>
+          <p class="text-gray-600">60 Tablet(s) in Bottle</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹599</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(56%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹263.56</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="2" data-name="Pharmeasy Calcium Magnesium Vitamin D3" data-price="263.56">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <!-- Product 3 -->
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Omnigel Gel 75gm" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Omnigel Gel 75gm</h3>
+          <p class="text-gray-600">75g Gel in Tube</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹279.5</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(17%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹231.99</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="3" data-name="Omnigel Gel 75gm" data-price="231.99">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <!-- Product 4 -->
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Baidyanath Nagpur Chandanasava" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Baidyanath Nagpur Chandanasava</h3>
+          <p class="text-gray-600">900ml Oral Liquid in Bottle</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹360</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(16%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹302.4</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="4" data-name="Baidyanath Nagpur Chandanasava" data-price="302.4">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <!-- More products -->
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Patanjali Aloe Vera Juice" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Patanjali Aloe Vera Juice</h3>
+          <p class="text-gray-600">1l Juice in Bottle</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹240</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(15%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹204</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="5" data-name="Patanjali Aloe Vera Juice" data-price="204">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Himalaya Liv.52 Tablets" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Himalaya Liv.52 Tablets</h3>
+          <p class="text-gray-600">100 Tablets in Bottle</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹170</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(10%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹153</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="6" data-name="Himalaya Liv.52 Tablets" data-price="153">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Dabur Chyawanprash" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Dabur Chyawanprash</h3>
+          <p class="text-gray-600">500g Paste in Jar</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹325</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(12%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹286</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="7" data-name="Dabur Chyawanprash" data-price="286">
+            Add
+          </button>
+        </div>
+      </div>
+      
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="p-4">
+          <img src="/api/placeholder/200/200" alt="Dr. Morepen BP Monitor" class="w-full h-48 object-contain mx-auto">
+          <h3 class="text-lg font-bold text-green-800 mt-4">Dr. Morepen BP Monitor</h3>
+          <p class="text-gray-600">1 Device</p>
+          <div class="flex items-center mt-2">
+            <span class="text-gray-500 line-through text-sm">MRP ₹2499</span>
+            <span class="bg-red-100 text-red-500 text-xs font-bold px-2 py-1 rounded ml-2">(25%)</span>
+          </div>
+          <div class="text-xl font-bold text-green-800 mt-1">₹1874.25</div>
+          <button class="btn-gradient w-full text-white py-2 px-4 rounded-lg mt-4 add-to-cart" data-id="8" data-name="Dr. Morepen BP Monitor" data-price="1874.25">
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    // Cart functionality
+    let cart = [];
+    let cartTotal = 0;
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+      const cartButton = document.getElementById('cart-button');
+      const cartPopup = document.getElementById('cart-popup');
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartBadge = document.getElementById('cart-badge');
+      const cartTotalElem = document.getElementById('cart-total');
+      
+      // Add to cart functionality
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const id = this.getAttribute('data-id');
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          
+          // Check if item already in cart
+          const existingItem = cart.find(item => item.id === id);
+          
+          if (existingItem) {
+            existingItem.quantity += 1;
+          } else {
+            cart.push({
+              id,
+              name,
+              price,
+              quantity: 1
+            });
+          }
+          
+          // Update cart badge with animation
+          updateCartBadge();
+          
+          // Show brief animation on button
+          this.classList.add('scale-105');
+          setTimeout(() => {
+            this.classList.remove('scale-105');
+          }, 200);
+          
+          // Update cart display if it's open
+          if (!cartPopup.classList.contains('hidden')) {
+            updateCartDisplay();
+          }
+        });
+      });
+      
+      // Toggle cart popup
+      cartButton.addEventListener('click', function() {
+        cartPopup.classList.toggle('hidden');
+        updateCartDisplay();
+      });
+      
+      // Close cart when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!cartButton.contains(event.target) && !cartPopup.contains(event.target)) {
+          cartPopup.classList.add('hidden');
+        }
+      });
+      
+      function updateCartBadge() {
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartBadge.textContent = totalItems;
+        
+        // Add animation
+        cartBadge.classList.remove('animation-pulse');
+        void cartBadge.offsetWidth; // Trigger reflow
+        cartBadge.classList.add('animation-pulse');
+      }
+      
+      function updateCartDisplay() {
+        // Clear current items
+        cartItemsContainer.innerHTML = '';
+        
+        // Calculate total
+        cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        
+        // Update total display
+        cartTotalElem.textContent = `₹${cartTotal.toFixed(2)}`;
+        
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = '<div class="text-gray-600 text-center py-4">Your cart is empty</div>';
+          return;
+        }
+        
+        // Add items to cart display
+        cart.forEach(item => {
+          const itemElement = document.createElement('div');
+          itemElement.className = 'flex justify-between items-center py-2 border-b';
+          
+          itemElement.innerHTML = `
+            <div>
+              <div class="font-medium">${item.name}</div>
+              <div class="text-sm text-gray-600">₹${item.price} × ${item.quantity}</div>
+            </div>
+            <div class="font-medium">₹${(item.price * item.quantity).toFixed(2)}</div>
+          `;
+          
+          cartItemsContainer.appendChild(itemElement);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

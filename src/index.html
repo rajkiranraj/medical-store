@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Khurana Medico</title>
+          <link rel="stylesheet" href="output.css">
+          <style>
+              @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+              @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+          </style>
+      </head>
+      <body class="h-screen w-full">
+          <div id="rajkiran">
+              <div class="bg-white font-sans min-h-screen lg:min-w-[1000px]">
+                  <header class="border-b border-gray-200 py-2">
+                      <div class="container mx-auto px-4 flex items-center justify-between">
+                          <div class="flex items-center space-x-6">
+                              <div class="flex items-center"><span class="text-xs text-gray-500">Take it easy</span></div>
+                              <div class="flex items-center">
+                                  <svg class="w-6 h-6 text-teal-500" viewBox="0 0 24 24" fill="currentColor">
+                                      <path
+                                          d="M19.7,7.3c-0.5-2-2.3-3.3-4.3-3.3H8.7C6.7,4,4.8,5.4,4.3,7.3L2.3,15c-0.2,0.8,0,1.7,0.5,2.4c0.5,0.7,1.3,1.1,2.2,1.1 h14.1c0.9,0,1.7-0.4,2.2-1.1c0.5-0.7,0.7-1.6,0.5-2.4L19.7,7.3z M8.1,6h7.7c1,0,1.9,0.7,2.2,1.6l1.7,6.4H12c-0.6,0-1,0.4-1,1 s0.4,1,1,1h7.7c-0.1,0.1-0.2,0.2-0.3,0.2H5c-0.1,0-0.2-0.1-0.3-0.2C4.6,16,4.5,15.9,4.5,15.8L6.1,8.1C6.3,6.9,7.1,6,8.1,6z M13,12 c0.6,0,1-0.4,1-1s-0.4-1-1-1s-1,0.4-1,1S12.4,12,13,12z"
+                                      ></path>
+                                  </svg>
+                                  <span class="ml-1 font-bold text-teal-500">PharmEasy</span>
+                              </div>
+                              <div class="flex items-center text-xs">
+                                  <svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="currentColor">
+                                      <path
+                                          d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
+                                      ></path>
+                                  </svg>
+                                  <span class="ml-1">Express delivery to</span>
+                              </div>
+                              <div class="flex items-center text-xs font-semibold">
+                                  <span>400001 Mumbai</span>
+                                  <svg
+                                      class="w-4 h-4 ml-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path d="M19 9l-7 7-7-7"></path>
+                                  </svg>
+                              </div>
+                          </div>
+                          <div class="flex items-center space-x-4">
+                              <button class="flex items-center text-sm hover:text-primary-600 transition-colors">
+                                  <svg
+                                      class="w-5 h-5 mr-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path
+                                          d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 5a1 1 0 0 0-1 1v4a1 1 0 0 0 .293.707l2.828 2.829a1 1 0 1 0 1.415-1.415L13 11.586V8a1 1 0 0 0-1-1z"
+                                      ></path>
+                                  </svg>
+                                  Download App
+                              </button>
+                              <button class="flex items-center text-sm hover:text-primary-600 transition-colors">
+                                  <svg
+                                      class="w-5 h-5 mr-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                      <circle cx="12" cy="7" r="4"></circle>
+                                  </svg>
+                                  <a href="login.html">Hello, Log in</a> <span class="text-xs text-red-500 ml-1 font-bold">*</span>
+                              </button>
+                              <button class="flex items-center text-sm hover:text-primary-600 transition-colors">
+                                  <svg
+                                      class="w-5 h-5 mr-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path
+                                          d="M20 7h-4a4 4 0 0 0-4-4a4 4 0 0 0-4 4H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm-8-3a3 3 0 0 1 3 3H9a3 3 0 0 1-3-3zm-6 5h12v2H6V9zm0 4h5v2H6v-2zm0 4h8v2H6v-2zm10 0h2v2h-2v-2zm0-4h2v2h-2v-2z"
+                                      ></path>
+                                  </svg>
+                                  Offers
+                              </button>
+                              <button class="flex items-center text-sm hover:text-primary-600 transition-colors">
+                                  <svg
+                                      class="w-5 h-5 mr-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path
+                                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                      ></path>
+                                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                  </svg>
+                                  Cart
+                              </button>
+                          </div>
+                      </div>
+                  </header>
+                  <nav class="border-b border-gray-200 py-3">
+                      <div class="container mx-auto px-4">
+                          <div class="flex justify-center space-x-8">
+                              <a
+                                  href="medicine.html"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >Medicine</a
+                              >
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >Lab Tests</a
+                              >
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >Doctor Consult</a
+                              >
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors flex items-center"
+                              >
+                                  Healthcare
+                                  <svg
+                                      class="w-4 h-4 ml-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path d="M19 9l-7 7-7-7"></path>
+                                  </svg>
+                              </a>
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >Health Blogs</a
+                              >
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >PLUS</a
+                              >
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >Offers</a
+                              >
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-sm font-medium hover:text-teal-500 transition-colors"
+                                  >Value Store</a
+                              >
+                          </div>
+                      </div>
+                  </nav>
+                  <section class="bg-gradient-to-r from-blue-50 to-amber-50 py-8">
+                      <div class="container mx-auto px-4">
+                          <h2 class="text-xl font-bold text-center mb-4">What are you looking for?</h2>
+                          <div class="flex justify-center items-center mb-6">
+                              <div class="flex items-center">
+                                  <svg
+                                      class="w-5 h-5 mr-2"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path
+                                          d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"
+                                      ></path>
+                                  </svg>
+                                  <span class="text-sm">Order with prescription.</span>
+                              </div>
+                              <a
+                                  href="https://rajkiran.cloud/placeholder"
+                                  class="text-teal-500 font-medium text-sm ml-4 flex items-center hover:text-teal-600 transition-colors"
+                              >
+                                  UPLOAD NOW
+                                  <svg
+                                      class="w-4 h-4 ml-1"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                  >
+                                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                  </svg>
+                              </a>
+                          </div>
+                          <div class="flex justify-center">
+                              <div class="relative w-full max-w-xl">
+                                  <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                      <svg
+                                          class="w-5 h-5 text-gray-400"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                      >
+                                          <circle cx="11" cy="11" r="8"></circle>
+                                          <path d="M21 21l-4.35-4.35"></path>
+                                      </svg>
+                                  </div>
+                                  <input
+                                      type="text"
+                                      placeholder="Search for"
+                                      class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                                  />
+                                  <button
+                                      class="absolute right-2 top-2 bg-teal-500 text-white px-4 py-1 rounded-md hover:bg-teal-600 transition-colors"
+                                  >
+                                      Search
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+                  <section class="py-6">
+                      <div class="container mx-auto px-4">
+                          <div class="grid grid-cols-7 gap-4">
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-18 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300 "
+                                  ><a href="medicine.html">
+                                      <img
+                                          src="./images/medicine.png"
+                                          alt="Medicine"
+                                          class="w-full h-full object-contain rounded-md"
+                                      />
+                                    </a>
+                                  </div>
+                                  <span class="text-sm font-medium">Medicine</span>
+                                  <span class="text-xs text-red-500">SAVE 24% OFF</span>
+                              </div>
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+                                  >
+                                      <img
+                                          src="./images/5403524.png"
+                                          alt="Lab Tests"
+                                          class="w-full h-full object-contain"
+                                      />
+                                  </div>
+                                  <span class="text-sm font-medium">Lab Tests</span>
+                                  <span class="text-xs text-red-500">UPTO 70% OFF</span>
+                              </div>
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+                                  >
+                                      <img
+                                          src="./images/bdycare2.jpg"
+                                          alt="Doctor Consult"
+                                          class="w-full h-full object-contain"
+                                      />
+                                  </div>
+                                  <span class="text-sm font-medium">Body Care</span>
+                              </div>
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+                                  >
+                                      <img
+                                          src="./images/infant.jpg"
+                                          alt="Healthcare"
+                                          class="w-full h-full object-contain"
+                                      />
+                                  </div>
+                                  <span class="text-sm font-medium">Child Care</span>
+                                  <span class="text-xs text-red-500">UPTO 80% OFF</span>
+                              </div>
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+                                  >
+                                      <img
+                                          src="./images/candid.webp"
+                                          alt="Health Blogs"
+                                          class="w-full h-full object-contain"
+                                      />
+                                  </div>
+                                  <span class="text-sm font-medium">Summer Essenstials</span>
+                              </div>
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+                                  >
+                                      <img
+                                          src="./images/plus.webp"
+                                          alt="PLUS"
+                                          class="w-full h-full object-contain"
+                                      />
+                                  </div>
+                                  <span class="text-sm font-medium">PLUS</span>
+                                  <span class="text-xs text-red-500">SAVE 5% EXTRA</span>
+                              </div>
+                              <div class="flex flex-col items-center group cursor-pointer">
+                                  <div
+                                      class="w-16 h-16 mb-2 group-hover:-translate-y-1 transition-transform duration-300"
+                                  >
+                                      <img
+                                          src="./images/value.png"
+                                          alt="Value Store"
+                                          class="w-full h-full object-contain"
+                                      />
+                                  </div>
+                                  <span class="text-sm font-medium">Value Store</span>
+                                  <span class="text-xs text-red-500">UPTO 50% OFF</span>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+                  <div class="scroll-container w-full bg-white shadow-lg rounded-xl overflow-hidden mb-8 py-6">
+                    <marquee behavior="scroll" direction="left" scrollamount="8" class="smooth-scroll">
+                      <div class="flex items-center space-x-8 px-4">
+                        <!-- Banner Item 1 - Doctor Consult -->
+                        <div class="banner-item flex items-center bg-blue-50 p-6 rounded-xl border border-blue-100 min-w-[320px]">
+                          <img src="./images/1.jpeg" alt="Doctor Consult" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-blue-700 mb-1">Doctor Consult</h3>
+                            <p class="text-sm text-blue-600">Talk to a doctor online anytime</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Banner Item 2 - BP Monitor -->
+                        <div class="banner-item flex items-center bg-green-50 p-6 rounded-xl border border-green-100 min-w-[320px]">
+                          <img src="./images/2.jpeg" alt="BP Monitor" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-green-700 mb-1">BP Monitor</h3>
+                            <p class="text-sm text-green-600">Quick results, accurate readings</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Banner Item 3 - Nutrition -->
+                        <div class="banner-item flex items-center bg-purple-50 p-6 rounded-xl border border-purple-100 min-w-[320px]">
+                          <img src="./images/3.jpeg" alt="Prohance" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-purple-700 mb-1">Prohance Nutrition</h3>
+                            <p class="text-sm text-purple-600">Start your nutrition journey today</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Banner Item 4 - Gut Health -->
+                        <div class="banner-item flex items-center bg-red-50 p-6 rounded-xl border border-red-100 min-w-[320px]">
+                          <img src="./images/4.jpeg" alt="Enterogermina" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-red-700 mb-1">Enterogermina</h3>
+                            <p class="text-sm text-red-600">Support your gut health</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Banner Item 5 - Lab Tests -->
+                        <div class="banner-item flex items-center bg-yellow-50 p-6 rounded-xl border border-yellow-100 min-w-[320px]">
+                          <img src="./images/5.jpeg" alt="Lab Tests" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-yellow-700 mb-1">Full Body Checkup</h3>
+                            <p class="text-sm text-yellow-600">Just ₹649 with 20% credits</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Banner Item 6 - Max Savings -->
+                        <div class="banner-item flex items-center bg-blue-50 p-6 rounded-xl border border-blue-100 min-w-[320px]">
+                          <img src="./images/6.jpeg" alt="Savings" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-blue-700 mb-1">Max Savings</h3>
+                            <p class="text-sm text-blue-600">Save 24% on medicines</p>
+                          </div>
+                        </div>
+                        
+                        <!-- Banner Item 7 - Cancer Care -->
+                        <div class="banner-item flex items-center bg-indigo-50 p-6 rounded-xl border border-indigo-100 min-w-[320px]">
+                          <img src="./images/7.jpeg" alt="Cancer Care" class="w-20 h-20 rounded-full object-cover mr-6 shadow-md" />
+                          <div>
+                            <h3 class="font-semibold text-lg text-indigo-700 mb-1">Cancer Care</h3>
+                            <p class="text-sm text-indigo-600">Affordable medicines, up to 45% off</p>
+                          </div>
+                        </div>
+                      </div>
+                    </marquee>
+                  </div>
+
+                  <style>
+                    @keyframes scroll-right {
+                      0% { transform: translateX(-100%); }
+                      100% { transform: translateX(100%); }
+                    }
+                    
+                    .scroll-right {
+                      animation: scroll-right 30s linear infinite;
+                    }
+                    
+                    .scroll-container:hover .scroll-right {
+                      animation-play-state: paused;
+                    }
+                    
+                    .smooth-scroll {
+                      -webkit-marquee-speed: slow;
+                    }
+                    
+                    .banner-item {
+                      transition: transform 0.2s ease-in-out;
+                    }
+                    
+                    .banner-item:hover {
+                      transform: translateY(-4px);
+                      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+                    }
+                  </style>
+                  
+         
+          <script>
+              tailwind.config = {
+                  content: ["./src/**/*.{html,js}"],
+                  theme: {
+                      name: "Bluewave",
+                      fontFamily: {
+                          sans: [
+                              "Open Sans",
+                              "ui-sans-serif",
+                              "system-ui",
+                              "sans-serif",
+                              '"Apple Color Emoji"',
+                              '"Segoe UI Emoji"',
+                              '"Segoe UI Symbol"',
+                              '"Noto Color Emoji"'
+                          ]
+                      },
+                      extend: {
+                          fontFamily: {
+                              title: [
+                                  "Lato",
+                                  "ui-sans-serif",
+                                  "system-ui",
+                                  "sans-serif",
+                                  '"Apple Color Emoji"',
+                                  '"Segoe UI Emoji"',
+                                  '"Segoe UI Symbol"',
+                                  '"Noto Color Emoji"'
+                              ],
+                              body: [
+                                  "Open Sans",
+                                  "ui-sans-serif",
+                                  "system-ui",
+                                  "sans-serif",
+                                  '"Apple Color Emoji"',
+                                  '"Segoe UI Emoji"',
+                                  '"Segoe UI Symbol"',
+                                  '"Noto Color Emoji"'
+                              ]
+                          },
+                          colors: {
+                              neutral: {
+                                  50: "#f7f7f7",
+                                  100: "#eeeeee",
+                                  200: "#e0e0e0",
+                                  300: "#cacaca",
+                                  400: "#b1b1b1",
+                                  500: "#999999",
+                                  600: "#7f7f7f",
+                                  700: "#676767",
+                                  800: "#545454",
+                                  900: "#464646",
+                                  950: "#282828"
+                              },
+                              primary: {
+                                  50: "#f3f1ff",
+                                  100: "#e9e5ff",
+                                  200: "#d5cfff",
+                                  300: "#b7a9ff",
+                                  400: "#9478ff",
+                                  500: "#7341ff",
+                                  600: "#631bff",
+                                  700: "#611bf8",
+                                  800: "#4607d0",
+                                  900: "#3c08aa",
+                                  950: "#220174",
+                                  DEFAULT: "#611bf8"
+                              }
+                          }
+                      },
+                      fontSize: {
+                          xs: ["12px", {lineHeight: "19.200000000000003px"}],
+                          sm: ["14px", {lineHeight: "21px"}],
+                          base: ["16px", {lineHeight: "25.6px"}],
+                          lg: ["18px", {lineHeight: "27px"}],
+                          xl: ["20px", {lineHeight: "28px"}],
+                          "2xl": ["24px", {lineHeight: "31.200000000000003px"}],
+                          "3xl": ["30px", {lineHeight: "36px"}],
+                          "4xl": ["36px", {lineHeight: "41.4px"}],
+                          "5xl": ["48px", {lineHeight: "52.800000000000004px"}],
+                          "6xl": ["60px", {lineHeight: "66px"}],
+                          "7xl": ["72px", {lineHeight: "75.60000000000001px"}],
+                          "8xl": ["96px", {lineHeight: "100.80000000000001px"}],
+                          "9xl": ["128px", {lineHeight: "134.4px"}]
+                      },
+                      borderRadius: {
+                          none: "0px",
+                          sm: "6px",
+                          DEFAULT: "12px",
+                          md: "18px",
+                          lg: "24px",
+                          xl: "36px",
+                          "2xl": "48px",
+                          "3xl": "72px",
+                          full: "9999px"
+                      },
+                      spacing: {
+                          0: "0px",
+                          1: "4px",
+                          2: "8px",
+                          3: "12px",
+                          4: "16px",
+                          5: "20px",
+                          6: "24px",
+                          7: "28px",
+                          8: "32px",
+                          9: "36px",
+                          10: "40px",
+                          11: "44px",
+                          12: "48px",
+                          14: "56px",
+                          16: "64px",
+                          20: "80px",
+                          24: "96px",
+                          28: "112px",
+                          32: "128px",
+                          36: "144px",
+                          40: "160px",
+                          44: "176px",
+                          48: "192px",
+                          52: "208px",
+                          56: "224px",
+                          60: "240px",
+                          64: "256px",
+                          72: "288px",
+                          80: "320px",
+                          96: "384px",
+                          px: "1px",
+                          0.5: "2px",
+                          1.5: "6px",
+                          2.5: "10px",
+                          3.5: "14px"
+                      }
+                  },
+                  plugins: [],
+                  important: "#rajkiran"
+              }
+          </script>
+      </body>
+  </html>
+  
+</body>
+</html>
